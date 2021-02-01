@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ExercicioTeste.Models.UsuarioViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listar</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome Completo
+            </th>
+            <th>
+                CPF
+            </th>
+            <th>
+                Data Nascimento
+            </th>
+            <th>
+                Endereço Completo
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.Nome @item.Sobrenome
+            </td>
+            <td>
+                @item.CPF
+            </td>
+            <td>
+                @item.DataNascimento
+            </td>
+            <td>
+                @item.Endereco, @item.Numero/@item.Complemento - @item.Cidade/@item.Estado - @item.CEP
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
